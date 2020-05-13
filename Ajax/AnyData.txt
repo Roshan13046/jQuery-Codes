@@ -1,0 +1,2 @@
+<p id="para1">This is a Ajax data 1</p>
+<p id="para2">This is a Ajax data 2</p>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Div and Spans</title>
+        <style>
+            .FaceBook{
+                background-color:#4267B2;
+                color: white;
+                height: 200px;
+                width:auto;
+            }
+            
+            .Twitter{
+                background-color:#1DA1F2;
+                color:white;
+                height:200px;
+                width:auto;
+            }
+            .WhatsApp{
+                background-color:#00E676;
+                color:#FFFFFF;
+                height:800px;
+                width:auto;
+            }
+            
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js";></script>
+    </head>
+    
+    <body>
+        
+        <div class="FaceBook">
+        <p>Facebook is <span id="great">Not  Great</span></p>
+            <p class="orange">Parag 2</p>
+            <p><a>This is a link1</a></p>
+           <p>This is link 2</p>
+        </div>
+        <p> a paragraph </p>
+        
+        <div class="Twitter">            
+        <p>Twitter</p>             
+            <p><a href="http://www.google.com">This is a google link1</a></p>
+           <p>This is link 2</p>
+            <ul>
+                <li>form1</li>
+                <li>form2</li>
+                <li>form3</li>
+            </ul>
+        </div>
+        <p> a paragraph </p>
+        
+        <div class="WhatsApp">
+        <p>WhatsApp</p>
+            <p><a href="http://www.microsoft.com">This is a microsoft link1</a></p>
+           <p>This is link 2</p>
+            <ul>
+                <li>form1</li>
+                <li>form2</li>
+                <li>form3</li>
+            </ul>
+            <table>
+                <tr><th>phone</th><th>Model</th><th>storage</th></tr>
+                <tr><td>Nokia</td><td>Ix223</td><td>Y32n</td></tr>
+                <tr><td>Nokia</td><td>Ix223</td><td>Y32n</td></tr>
+                <tr><td>Nokia</td><td>Ix223</td><td>Y32n</td></tr>
+                <tr><td>Nokia</td><td>Ix223</td><td>Y32n</td></tr>
+                <tr><td>Nokia</td><td>Ix223</td><td>Y32n</td></tr>
+                <tr><td>Nokia</td><td>Ix223</td><td>Y32n</td></tr>
+                               
+            </table>
+             <p>Type your name: <input><button type="submit">Submit</button></p>
+        </div>
+        
+        <p> a paragraph </p>
+        <script>
+            $(function(){
+               $("*").css("font-size",'20px');//* selects all fonts
+               $("div > p").css("text-align","center");
+               $("div - p").css("text-align","center") ;
+               $("div p").css("text-align","center");
+                
+               $("#great").css("background-color","pink")    ;//for id
+                $(".orange").css("background-color","orange");//for class
+                $("div.Facebook").css("font-family","sans-serif");//for a div element
+                
+                $("p:first-child").css("text-decoration","underline");//first para of all div 
+                $("p:last-child").css("text-decoration","underline");
+                
+                $("p:first-child").css("text-decoration","underline");
+                
+                $("[href]").css("color","red"); //for url               
+                $("li:first-child,li:last-child").css("background-color","yellow");     //for li            
+                $("tr:even").css("background-color","purple");//for table row
+                $("tr:odd").css("background-color","blue");//for table row
+                
+                //for button submit
+                $(":input").css("background-color","orange");//for input
+                $(":Submit").css("background-color","red");//for submit
+                
+                $("div:has(table)").css("background-color","aqua");//for table inside a div
+                
+            });
+        </script>
+    </body>      
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Change html content and attribute</title>
+        <style>
+            .FaceBook{
+                background-color:#4267B2;
+                color: white;
+                height: 100px;
+                width:auto;
+            }
+            
+            .Twitter{
+                background-color:#1DA1F2;
+                color:white;
+                height:100px;
+                width:auto;
+            }
+            .WhatsApp{
+                background-color:#00E676;
+                color:#FFFFFF;
+                height:auto;
+                width:auto;
+            }
+       
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js";></script>
+    </head>
+    
+    <body>
+        <button id="changeFacebookStyle">Change fb Widthstyle</button>
+        <button id="changeTwitterStyle">Change Tw class style</button>
+        <button id="showWhatsApp">Show WhatApp</button>
+        <button id="ChangeGreat">change Great </button>
+        <div class="FaceBook" id="fb">
+        <p>Facebook</p>
+            <p>Facebood is <span class="great" id="great">Great</span></p>
+        </div>        
+        <div class="Twitter" id="tw">
+        <p>Twitter</p>
+        </div>        
+        <div class="WhatsApp" id="wa">
+        <p>WhatsApp</p>
+            <p><a href="https/www.whatsapp.com">Whats app link</a></p>
+        </div>
+        
+        <p>Enter any Name :<input></p>                
+    </body>      
+    <script>
+       $(function(){
+          $("#changeFacebookStyle").click(function(){
+              $("#fb").css("width",100*Math.random()-50+$("#fb").width());
+              $("#fb").addClass("WhatsApp");//changing fb styling to WhatsApp
+              window.alert($("#fb").innerHeight());
+              window.alert($("#fb").outerHeight());
+          }) ;
+           
+           //removing the class using button click
+           $("#changeTwitterStyle").click(function(){
+               $("#tw").removeClass("Twitter");
+           });
+           
+           //removing the class using click on the div
+           $("#wa").click(function(){
+               $("#wa").removeClass("WhatsApp");
+           });
+           
+           //styling part 2
+           $("#tw").css("position","absolute");
+           $("#tw").css({'top': 200*Math.random(),'left':200*Math.random(),'background-color':"pink"});
+           
+           $("#fb").dblclick(function(){
+              $(this).hide();
+           });
+          
+           $("#showWhatsApp").click(function(){
+              $("#wa").show() ;
+           });
+           
+           $("#chageGreat").click(function(){
+              $("#great").wrap("<div></div>") ;
+           });
+       });
+            
+    </script>
+
+</html>
