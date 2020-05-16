@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ajax</title>
+        <style>
+            .FaceBook{
+                background-color:#4267B2;
+                color: white;
+                height: 100px;
+                width:auto;
+            }
+            
+            .Twitter{
+                background-color:#1DA1F2;
+                color:white;
+                height:100px;
+                width:auto;
+            }
+            .WhatsApp{
+                background-color:#00E676;
+                color:#FFFFFF;
+                height:auto;
+                width:auto;
+            }
+            .margin{
+                margin: 0;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js";></script>
+    </head>
+    
+    <body>
+        <button id="button">Ajax button</button>
+        <div class="FaceBook" id="fb">
+        <p>Facebook</p>
+            <p>Facebook is <span class="great" id="great">Great</span></p>
+        </div>        
+        <div class="Twitter" id="tw">
+        <p>Twitter</p>
+        </div>        
+        <div class="WhatsApp" id="wa">
+        <p>WhatsApp</p>
+            <p><a href="https/www.whatsapp.com">Whats app link</a></p>
+        </div>
+        
+        <p>Enter any Name :<input></p>                
+        
+        
+    </body>      
+    <script>
+//        AJAX:Asynchronous javaScript and XML.It is used to exchange a data btw webpage and server.Many websites uses this to change path insted  reloading the page.It makes user experience more interactive.
+        $(function(){
+            $("#fb").load("Ajax/AnyData.txt");
+            //loading only para1 of AnyData.txt
+            
+            $("#tw").load("Ajax/AnyData.txt#para1");
+            
+//            $("button").click(function(){
+//               s.ajax({url : "Ajax/AnyData.txt",success : function(data){
+//                   $("#wa").html(data);}
+//                }) ;
+//            });
+            
+            //same as previous
+            
+            $("button").click(function(){
+               $.ajax({
+                   url:"Ajax/AnyData.txt"}).done(function(someData){
+                   $("#fb").html(someData);
+               }); 
+            });
+                      
+        });
+        
+    </script>
+
+</html>

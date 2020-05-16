@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Dragable and Dropable</title>
+        <style>
+            .FaceBook{
+                background-color:#4267B2;
+                color: white;
+                height: 100px;
+                width:auto;
+            }
+            
+            .Twitter{
+                background-color:#1DA1F2;
+                color:white;
+                height:100px;
+                width:auto;
+            }
+            .WhatsApp{
+                background-color:#00E676;
+                color:#FFFFFF;
+                height:auto;
+                width:auto;
+            }   
+            #drop{
+                background-color:#B32FED;
+                color: white;
+                height: 100px;
+                width:auto;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js";></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    </head>
+    
+    <body>       
+        
+        <div class="FaceBook ui-corner-all" id="fb">
+        <p>Facebook</p>
+        </div>
+        
+        <div class="Twitter ui-corner-all" id="tw">
+        <p>Twitter</p>
+        </div>
+        
+        <div class="WhatsApp ui-corner-all" id="wa">
+        <p>WhatsApp</p>
+            <p><a href="https/www.whatsapp.com">Whats app link</a></p>
+        </div>     
+           
+        <div class="ui-state-error" id="error"style="height:100px"><p>Something something</p><p>Something something</p>Error Message</div>
+        
+        <div class="ui-corner-all" id="drop">you can Drop things here</div>
+        <script>
+            var message =["My ","Name","is ","lakhan","also roshan","lalan"];
+            
+            
+       $(function(){
+          $("#fb").draggable(); 
+           $("#wa").draggable({
+               axis:"x"//note: there is no ;
+           });
+           $("#tw").draggable({
+              axis:"y" 
+           });
+           
+           $("#error").draggable({
+              revert: true , //it will come back to its starting position
+               start: function(){//changing color of fb on start dragging
+                   $("#fb").css("background-color","yellow");
+               },
+               drag:function(){
+                   $("#tw").css("background-color","pink");
+                   
+                   $("#wa").css("background-color","rgb("+Math.floor(256*Math.random())+","+Math.floor(256*Math.random())+","+Math.floor(256*Math.random())+")");   
+                
+                   //changing stringin during drag
+                   $("#error").find("p").html(message[Math.floor(6*Math.random())]);
+                   
+               },
+                   stop:function(){
+                           $("#tw").css("background-color","red");
+                       }
+               
+           });
+           
+           
+           $("#drop").droppable({
+               drop:function(){
+                   $(this).css("background-color","orange");
+               },
+               accept: "#tw" //restricting to only drop twitter div
+           });
+           
+       });
+            
+    </script>
+
+    </body>      
+    
+</html>

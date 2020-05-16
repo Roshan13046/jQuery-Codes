@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Change html content and attribute</title>
+        <style>
+            .FaceBook{
+                background-color:#4267B2;
+                color: white;
+                height: 100px;
+                width:auto;
+            }
+            
+            .Twitter{
+                background-color:#1DA1F2;
+                color:white;
+                height:auto;
+                width:auto;
+            }
+            .WhatsApp{
+                background-color:#00E676;
+                color:#FFFFFF;
+                height:auto;
+                width:auto;
+                padding:10px;
+            }                
+            
+        li{
+            font-size: 2em;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+            .connected{
+                border: 1px solid #eee;
+                min-height: 20px;
+            }
+            
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js";></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/sunny/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        
+    </head>
+    
+    <body>       
+        
+        <div class="FaceBook ui-corner-all" id="fb">
+        <p>Facebook</p>
+        </div>
+        
+        <div class="Twitter ui-corner-all" id="tw">
+        <ul id="list" class="connected">
+            <li class="ui-state-default">Ninja</li>
+            <li class="ui-state-default">Dragon</li>
+            <li class="ui-state-defaultnotSortable">Pokemon</li>
+        </ul>
+            
+        </div>
+        
+        <div class="WhatsApp ui-corner-all" id="wa">
+        <p>WhatsApp</p>
+            <p><a href="https/www.whatsapp.com">Whats app link</a></p>
+            <ul id="list2"class="connected">
+            <li class="ui-state-default">Najnxc</li>
+            <li class="ui-state-default">Ddchghj</li>
+            <li class="ui-state-defaultnotSortable">Pcmmbcokemon</li>
+        </ul>
+        </div>     
+        
+        <script>
+            $(function(){
+               $("#list").sortable({
+                   placeholder: "ul-state-highlight",
+                //to prevent some items from getting sorted
+                cancel : ".notSortable"
+               }) ;
+                
+                $("#list ,#list2").sortable({
+                    connectWith :".connected"
+                });
+                
+            });
+        
+        </script>    
+            
+    
+
+    </body>      
+    
+</html>

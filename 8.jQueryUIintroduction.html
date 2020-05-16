@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Change html content and attribute</title>
+        <style>
+            .FaceBook{
+                background-color:#4267B2;
+                color: white;
+                height: 100px;
+                width:auto;
+            }
+            
+            .Twitter{
+                background-color:#1DA1F2;
+                color:white;
+                height:100px;
+                width:auto;
+            }
+            .WhatsApp{
+                background-color:#00E676;
+                color:#FFFFFF;
+                height:auto;
+                width:auto;
+            }                
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js";></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/sunny/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    </head>
+    
+    <body>       
+        
+        <div class="FaceBook ui-corner-all" id="fb">
+        <p>Facebook</p>
+        </div>
+        
+        <div class="Twitter ui-corner-all" id="tw">
+        <p>Twitter</p>
+        </div>
+        
+        <div class="WhatsApp ui-corner-all" id="wa">
+        <p>WhatsApp</p>
+            <p><a href="https/www.whatsapp.com">Whats app link</a></p>
+        </div>     
+        
+        <div class="ui-state-error" id="error" style="height:100px;margin-top:20px"><p>Error Message using jquery UI .</p></div>
+        <script>
+       $(function(){
+          $("#fb").draggable(); 
+           
+           $("#error").draggable();
+           
+           $("#tw").draggable();
+           $("#wa").draggable();
+       });
+            
+    </script>
+
+    </body>      
+    
+</html>

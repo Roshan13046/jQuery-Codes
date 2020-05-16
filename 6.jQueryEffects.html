@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Change html content and attribute</title>
+        <style>
+            .FaceBook{
+                background-color:#4267B2;
+                color: white;
+                height: 100px;
+                width:auto;
+            }
+            
+            .Twitter{
+                background-color:#1DA1F2;
+                color:white;
+                height:100px;
+                width:auto;
+            }
+            .WhatsApp{
+                background-color:#00E676;
+                color:#FFFFFF;
+                height:auto;
+                width:auto;
+            }
+            .margin{
+                margin: 0;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js";></script>
+    </head>
+    
+    <body>
+      <button id="fadeFacebook">Fade Facebook</button>
+      <button id="fadeTwitter">Fade Twitter</button>  
+        <button id="fadeWhatsApp">Fade WhatsApp</button>        
+        <button id="fadeToggle">Fade Toggle</button>
+        <button id="animate">Animate</button>
+        
+        <div class="FaceBook" id="fb">
+        <p>Facebook</p>
+            <p>Facebook is <span class="great" id="great">Great</span></p>
+        </div>        
+        <div class="Twitter" id="tw">
+        <p>Twitter</p>
+        </div>        
+        <div class="WhatsApp" id="wa">
+        <p>WhatsApp</p>
+            <p><a href="https/www.whatsapp.com">Whats app link</a></p>
+        </div>
+        
+        <p>Enter any Name :<input></p>                
+    </body>      
+    <script>
+        $(function(){
+            $("#fadeFacebook").click(function(){
+                $("#fb").fadeOut();
+            });
+            
+            $("#fadeTwitter").click(function(){
+               $("#tw").fadeIn() ;
+            });
+            $("#fadeWhatsApp").click(function(){
+               $("#wa").fadeOut(3000,function(){
+                   window.alert("Fade Out Completed");
+               });                
+            });
+            
+            //toogle duration is in milliseconds
+            $("#fadeToggle").click(function(){
+               $("#fb").fadeToggle(1000); 
+                $("#tw").fadeToggle(2000);
+                $("#wa").fadeToggle(3000);                
+            });
+//            
+//            Animations 
+//            $("#animate").click(function(){                $("#fb").animate({width:'200px',height:"0px",opacity:"0.5"},1000);
+            
+            $("#animate").click(function(){
+               $("#fb").animate({width:'200px'},"slow") ;
+                $("#fb").animate({height:"300px"},"slow");
+                $("#fb").animate({height:"100px"},"slow");
+                
+                $("#fb").delay(30).animate({width:"300px"},"slow");
+            });
+            });
+        
+    </script>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Change html content and attribute</title>
+        <style>
+            .FaceBook{
+                background-color:#4267B2;
+                color: white;
+                height:auto;
+                width:auto;
+            }
+            
+            .Twitter{
+                background-color:#1DA1F2;
+                color:white;
+                height:100px;
+                width:auto;
+            }
+            .WhatsApp{
+                background-color:#00E676;
+                color:#FFFFFF;
+                height:auto;
+                width:auto;
+            }                
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js";></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/sunny/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    </head>
+    
+    <body>       
+          <p>Accordina: it's a set of documentaion section with header and content inside a div with collapsable and expandable .  it must be innside a div</p>
+      
+        <div class="FaceBook ui-corner-all" id="fb">
+            <h3>Section 1</h3>
+                <div><p>Content 1</p>
+                <p>Content 1</p>
+                <p>Content 1</p>
+                <p>Content 1</p>
+            </div>
+            <h3>Section 2</h3>
+            <div><p>Content 2</p></div>
+            <h3>Section 3</h3>
+            <div><p>Content 3</p></div>
+        </div>
+        
+        <div class="Twitter ui-corner-all" id="tw">
+        <p>Twitter</p>
+        </div>
+        
+        <div class="WhatsApp ui-corner-all" id="wa">
+        <p>WhatsApp</p>
+            <p><a href="https/www.whatsapp.com">Whats app link</a></p>
+        </div>     
+        
+        <div class="ui-state-error" id="error" style="height:100px;margin-top:20px"><p>Error Message using jquery UI .</p></div>
+        
+        <script>
+            
+       $(function(){
+         $("#fb").accordion({
+             collapsible: true,
+             //to change the icons style
+             icons:{
+                 header:"ui-icon-arrow-e",
+                 activeHeader:"ui-icon-arrow-s"
+             },
+             //to make the size of the accordian equal to the content size
+             heightStyle: "content"
+         });
+       });
+            
+    </script>
+
+    </body>      
+    
+</html>
