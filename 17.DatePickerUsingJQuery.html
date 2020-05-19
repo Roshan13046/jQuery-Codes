@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Date Picker</title>
+        <style>
+            .FaceBook{
+                background-color:#4267B2;
+                color: white;
+                height: 100px;
+                width:auto;
+            }
+            
+            .Twitter{
+                background-color:#1DA1F2;
+                color:white;
+                height:100px;
+                width:auto;
+            }
+            .WhatsApp{
+                background-color:#00E676;
+                color:#FFFFFF;
+                height:auto;
+                width:auto;
+            }                
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js";></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/sunny/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    </head>
+    
+    <body>       
+        
+        <div class="FaceBook ui-corner-all" id="fb">
+            <p>FLight departure date:<input id="depart"></p>
+            <p>Flight return date:<input id="return"></p>
+        </div>
+        
+        <div class="Twitter ui-corner-all" id="tw">
+        <p>Twitter</p>
+        </div>
+        
+        <div class="WhatsApp ui-corner-all" id="wa">
+        <p>WhatsApp</p>
+            <p><a href="https/www.whatsapp.com">Whats app link</a></p>
+        </div>     
+        
+        <div class="ui-state-error" id="error" style="height:100px;margin-top:20px"><p>Error Message using jquery UI .</p></div>
+        <script>
+       $(function(){
+          $("#depart").datepicker({
+              showAnim:"fadeIn",
+              changeYear:true,
+              numberOfMonth: 1,
+              dateFormat:"d M, y",
+              showOn: "button",
+              buttonImage:"image/calender.png",
+              buttonImageOnly:true,
+              buttonText:"Choose departure date.",
+              minDate: +1,
+              maxDate: "+12M"+"10D",
+              //logically correct return date
+              onClose:function(selectedDate){
+                  $("#return").datepicker("option","minDate",selectedDate)
+              },
+              showWeek:true
+          });
+           $("#return").datepicker({
+               dateFormat:"d M, y",
+           });
+       });
+            
+    </script>
+
+    </body>      
+    
+</html>
